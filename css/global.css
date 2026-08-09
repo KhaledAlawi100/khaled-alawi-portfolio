@@ -1,0 +1,61 @@
+/* ==========================
+   Base
+========================== */
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+/* ==========================
+   Container
+========================== */
+
+.container {
+  width: min(calc(100% - 2rem), var(--container-width));
+
+  margin-inline: auto;
+}
+
+/* ==========================
+   Typography
+========================== */
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+/* ==========================
+   Links
+========================== */
+
+a {
+  transition: color var(--transition-fast);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
