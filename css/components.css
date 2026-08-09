@@ -106,3 +106,74 @@
 
   flex-shrink: 0;
 }
+
+/* ==========================
+   Skill Category
+========================== */
+
+.skill-category {
+  padding: var(--space-xl);
+
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-category h3 {
+  margin-bottom: var(--space-lg);
+
+  font-size: var(--font-size-lg);
+}
+
+/* ==========================
+   Technology List
+========================== */
+
+.technology-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: var(--space-sm);
+}
+
+/* ==========================
+   Technology Card
+========================== */
+
+.technology-card {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: var(--space-sm) var(--space-md);
+
+  background: var(--color-background-alt);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+.technology-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-primary);
+}
+
+.technology-name {
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-medium);
+}

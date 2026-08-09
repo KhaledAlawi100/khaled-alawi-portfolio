@@ -241,3 +241,246 @@ The portfolio is now ready for the next major section:
 ```text
 Sprint 3 — Skills
 ```
+
+# Sprint 3 — Skills
+
+### Completed
+
+Implemented the **Skills section** to present technical skills in a structured and professional way.
+
+The section is divided into skill categories, with individual technologies displayed as reusable technology cards.
+
+---
+
+## Skills Structure
+
+The skills are organized into four categories:
+
+```text
+Skills
+│
+├── Backend Development
+│   ├── Java
+│   ├── Spring Boot
+│   ├── C#
+│   └── .NET
+│
+├── Databases
+│   ├── PostgreSQL
+│   ├── SQL Server
+│   └── SQL
+│
+├── Frontend Development
+│   ├── HTML5
+│   ├── CSS3
+│   └── JavaScript
+│
+└── Tools & Engineering
+    ├── Git
+    ├── GitHub
+    ├── Docker
+    └── REST APIs
+```
+
+---
+
+## Features
+
+### Skill Categories
+
+Created separate categories for:
+
+- Backend Development
+- Databases
+- Frontend Development
+- Tools & Engineering
+
+This makes the technical skills easier to scan and understand.
+
+### Technology Cards
+
+Each technology is displayed using a reusable card component.
+
+Example:
+
+```html
+<div class="technology-card">
+  <span class="technology-name">Java</span>
+</div>
+```
+
+The same component is reused for all technologies.
+
+### Responsive Layout
+
+The skills section uses CSS Grid.
+
+On larger screens:
+
+```text
+┌─────────────────┐  ┌─────────────────┐
+│ Backend         │  │ Databases       │
+└─────────────────┘  └─────────────────┘
+
+┌─────────────────┐  ┌─────────────────┐
+│ Frontend        │  │ Tools            │
+└─────────────────┘  └─────────────────┘
+```
+
+On smaller screens, the categories become a single-column layout.
+
+```text
+┌────────────────────────────┐
+│ Backend                    │
+└────────────────────────────┘
+
+┌────────────────────────────┐
+│ Databases                  │
+└────────────────────────────┘
+
+┌────────────────────────────┐
+│ Frontend                   │
+└────────────────────────────┘
+
+┌────────────────────────────┐
+│ Tools                      │
+└────────────────────────────┘
+```
+
+---
+
+## CSS Architecture
+
+The implementation continues to follow the project's CSS separation.
+
+### `main.css`
+
+Responsible for page and section layout:
+
+```text
+Skills Section
+      │
+      ├── section-heading
+      │
+      └── skills-grid
+```
+
+### `components.css`
+
+Responsible for reusable UI components:
+
+```text
+skill-category
+      │
+      └── technology-list
+              │
+              └── technology-card
+                      │
+                      └── technology-name
+```
+
+This keeps layout responsibilities separate from reusable component styling.
+
+---
+
+## CSS Grid
+
+The desktop layout uses two columns:
+
+```css
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+```
+
+The layout changes to one column on smaller screens:
+
+```css
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+---
+
+## Component Styling
+
+Skill categories use:
+
+- Design-system spacing
+- Border
+- Border radius
+- Background color
+- Box shadow
+
+Technology cards use:
+
+- Flexible wrapping
+- Consistent spacing
+- Border
+- Hover state
+- Design-system variables
+
+The implementation avoids hardcoded design values where reusable CSS variables are available.
+
+---
+
+## Responsive Behavior
+
+The Skills section was tested for:
+
+- Desktop
+- Tablet
+- Mobile
+
+The two-column desktop layout becomes a single-column layout on smaller screens.
+
+---
+
+## JavaScript
+
+No JavaScript was required for this sprint.
+
+The Skills section is currently a static presentation of the developer's technical skills.
+
+Future JavaScript functionality will be introduced only when required by later sprints.
+
+---
+
+## Sprint Result
+
+The portfolio now communicates the developer's technical capabilities more clearly.
+
+The page contains:
+
+```text
+Hero
+  ↓
+About
+  ↓
+Education
+  ↓
+Skills
+  ├── Backend
+  ├── Databases
+  ├── Frontend
+  └── Tools & Engineering
+  ↓
+Projects
+  ↓
+Contact
+```
+
+The Skills section is now ready for future portfolio improvements.
+
+---
+
+# Screenshots
+
+## Skills Section
+
+![Skills Section](screenshots/sprint-3/skills-section.png)
