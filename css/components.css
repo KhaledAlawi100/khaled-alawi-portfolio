@@ -67,3 +67,42 @@
 .theme-toggle:hover {
   transform: rotate(10deg);
 }
+
+/* ==========================
+   Social Links
+========================== */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--space-lg);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  color: var(--color-text-secondary);
+
+  font-weight: var(--font-weight-medium);
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+}
