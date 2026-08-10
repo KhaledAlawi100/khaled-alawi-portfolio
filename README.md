@@ -484,3 +484,247 @@ The Skills section is now ready for future portfolio improvements.
 ## Skills Section
 
 ![Skills Section](screenshots/sprint-3/skills-section.png)
+
+# Sprint 4 — Portfolio Projects & Interactive Project Details
+
+## Overview
+
+Sprint 4 focused on building the Projects section of the portfolio and introducing the first JavaScript interactions into the project.
+
+The goal was to present selected projects professionally while keeping the portfolio structure clean, responsive, and easy to extend.
+
+This sprint was larger than the previous sprints because it introduced:
+
+- Project cards
+- Project screenshots and logos
+- Technology badges
+- Project-specific GitHub links
+- Detailed project information
+- Native HTML `<dialog>` elements
+- JavaScript event handling
+- ES modules
+- `data-*` attributes
+- Responsive project layouts
+- Modal/backdrop interactions
+- Defensive JavaScript error handling
+
+---
+
+# Sprint Goals
+
+The main goals of Sprint 4 were:
+
+- Build a professional Projects section.
+- Create reusable project-card styling.
+- Present important projects consistently.
+- Highlight the graduation project, Mofwah.
+- Provide more technical information without making the project cards too large.
+- Introduce interactive project details using native HTML dialogs.
+- Keep JavaScript separated into modules.
+- Make the Projects section responsive.
+- Connect projects to their GitHub repositories where available.
+
+---
+
+# Projects Included
+
+The portfolio currently presents the following projects:
+
+## 1. Mofwah — AI Voice-Agent Platform
+
+**Type:** Graduation Project
+
+Mofwah is a multi-tenant AI voice-agent platform designed to automate inbound and outbound customer calls.
+
+My primary contribution was on the backend side, where I worked on several microservices and backend infrastructure.
+
+### Backend Contributions
+
+#### Knowledge Base Service
+
+Developed the Knowledge Base Service for managing knowledge bases and their content used by AI agents.
+
+#### Integration Service
+
+Developed the Integration Service for connecting the platform with external CRM systems such as Zid using OAuth 2.0.
+
+#### Subscription Service
+
+Developed the Subscription Service for managing subscription plans, billing, invoices, usage tracking, and Stripe webhook handling.
+
+#### Microservices Infrastructure
+
+Contributed to the API Gateway and service-discovery infrastructure using:
+
+- Spring Cloud Gateway
+- Eureka
+
+#### REST APIs & Persistence
+
+Implemented RESTful APIs with PostgreSQL persistence using:
+
+- Spring Data JPA
+- Hibernate
+
+#### Multi-Tenant Security
+
+Applied multi-tenant data isolation and security through authenticated service requests.
+
+### Technologies
+
+- Java
+- Spring Boot
+- Spring Security
+- OAuth 2.0
+- JWT
+- PostgreSQL
+- Redis
+- JPA / Hibernate
+- Flyway
+- Docker
+- Eureka
+- Spring Cloud Gateway
+- OpenAPI / Swagger
+- JUnit
+- Mockito
+
+### Project Presentation
+
+The main project card intentionally contains only a concise description.
+
+The detailed backend contribution information is displayed through the **View Technical Details** dialog.
+
+This keeps the project card readable while still allowing recruiters or developers to explore the technical implementation.
+
+---
+
+## 2. DVLD
+
+**Type:** Desktop Application
+
+A Driving and Vehicle License Department management system built to manage:
+
+- Drivers
+- Licenses
+- Applications
+- Vehicle-related operations
+- Licensing operations
+
+### Technologies
+
+- C#
+- .NET
+- Windows Forms
+- SQL Server
+- 3-Tier Architecture
+
+The project also includes a dedicated project-details dialog containing additional technical information.
+
+---
+
+## 3. Secure Employee API
+
+**Type:** Backend / REST API
+
+A backend API project focused on building a secure employee-management REST API.
+
+### Repository
+
+[Secure Employee API](https://github.com/KhaledAlawi100/secure-employee-api)
+
+The project demonstrates backend development using Java and Spring Boot with a focus on API development and security.
+
+---
+
+# Project Card Design
+
+Each project follows a consistent card structure.
+
+```text
+┌──────────────────────────────────────┐
+│                                      │
+│          Project Image / Logo        │
+│                                      │
+├──────────────────────────────────────┤
+│ Project Type                         │
+│                                      │
+│ Project Name                         │
+│                                      │
+│ Short Project Description             │
+│                                      │
+│ Technology  Technology  Technology   │
+│ Technology  Technology               │
+│                                      │
+│ [ View Details ] [ GitHub ]          │
+└──────────────────────────────────────┘
+```
+
+# Sprint 4 — Final Screenshots
+
+The following screenshots show the final implementation completed during Sprint 4.
+
+## Projects Section
+
+The Projects section presents the selected projects using a consistent card layout.
+
+Each card includes:
+
+- Project image or logo
+- Project type
+- Project name
+- Short description
+- Technology badges
+- Project details button
+- GitHub link
+
+![Sprint 4 — Projects Section](assets/screenshots/sprint-04-projects.png)
+
+---
+
+## Mofwah Project
+
+The Mofwah project is highlighted as the graduation project.
+
+The card uses the Mofwah project logo and provides a concise overview of the project while keeping the detailed backend contributions inside a separate dialog.
+
+![Sprint 4 — Mofwah Project](assets/screenshots/sprint-04-mofwah-card.png)
+
+---
+
+## Mofwah Technical Details
+
+The **View Technical Details** button opens a native HTML `<dialog>` containing additional information about my backend contributions.
+
+The dialog presents:
+
+- Project overview
+- Knowledge Base Service
+- Integration Service
+- Subscription Service
+- Microservices infrastructure
+- REST APIs and persistence
+- Multi-tenant security
+- Technologies used
+
+![Sprint 4 — Mofwah Technical Details](assets/screenshots/sprint-04-mofwah-dialog.png)
+
+---
+
+## DVLD Project
+
+The DVLD project follows the same project-card structure to keep the portfolio visually consistent.
+
+![Sprint 4 — DVLD Project](assets/screenshots/sprint-04-dvld-card.png)
+
+---
+
+## DVLD Technical Details
+
+The DVLD technical information is displayed through the same dialog-based interaction used by the Mofwah project.
+
+This keeps the project cards compact while still allowing additional technical information to be viewed when needed.
+
+![Sprint 4 — DVLD Technical Details](assets/screenshots/sprint-04-dvld-dialog.png)
+
+---
+

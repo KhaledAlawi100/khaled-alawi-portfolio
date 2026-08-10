@@ -1,6 +1,6 @@
-/* ==========================
+/* =========================================================
    Header
-========================== */
+========================================================= */
 
 .site-header {
   position: sticky;
@@ -14,25 +14,25 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-/* ==========================
+/* =========================================================
    Navbar
-========================== */
+========================================================= */
 
 .navbar {
-  height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  height: 100%;
 
   gap: var(--space-lg);
 }
 
 .navbar-logo {
+  color: var(--color-text);
+
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-
-  color: var(--color-text);
 }
 
 .navbar-links {
@@ -47,21 +47,23 @@
 
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
+
+  transition: color var(--transition-normal);
 }
 
 .navbar-links a:hover {
   color: var(--color-primary);
 }
 
-/* ==========================
+/* =========================================================
    Hero
-========================== */
+========================================================= */
 
 .hero-section {
-  min-height: calc(100vh - var(--header-height));
-
   display: flex;
   align-items: center;
+
+  min-height: calc(100vh - var(--header-height));
 
   padding: var(--space-4xl) 0;
 }
@@ -101,9 +103,9 @@
   margin-bottom: var(--space-xl);
 }
 
-/* ==========================
-   Sections
-========================== */
+/* =========================================================
+   General Sections
+========================================================= */
 
 .section {
   padding: var(--space-4xl) 0;
@@ -117,9 +119,39 @@
   margin-bottom: var(--space-lg);
 }
 
-/* ==========================
+/* =========================================================
+   Section Heading
+========================================================= */
+
+.section-heading {
+  max-width: 700px;
+
+  margin-bottom: var(--space-3xl);
+}
+
+.section-eyebrow {
+  margin-bottom: var(--space-sm);
+
+  color: var(--color-primary);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-heading h2 {
+  margin-bottom: var(--space-md);
+}
+
+.section-heading > p:last-child {
+  color: var(--color-text-secondary);
+}
+
+/* =========================================================
    About
-========================== */
+========================================================= */
 
 .about-section {
   padding: var(--space-4xl) 0;
@@ -133,9 +165,9 @@
   max-width: 750px;
 }
 
-/* ==========================
+/* =========================================================
    Education
-========================== */
+========================================================= */
 
 .education {
   max-width: 750px;
@@ -153,7 +185,6 @@
   background: var(--color-background);
 
   border: 1px solid var(--color-border);
-
   border-radius: var(--radius-md);
 
   box-shadow: var(--shadow-sm);
@@ -173,32 +204,9 @@
   font-size: var(--font-size-sm);
 }
 
-/* ==========================
+/* =========================================================
    Skills
-========================== */
-.section-heading {
-  max-width: 700px;
-  margin-bottom: var(--space-3xl);
-}
-
-.section-eyebrow {
-  margin-bottom: var(--space-sm);
-
-  color: var(--color-primary);
-
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.section-heading h2 {
-  margin-bottom: var(--space-md);
-}
-
-.section-heading > p:last-child {
-  color: var(--color-text-secondary);
-}
+========================================================= */
 
 .skills-grid {
   display: grid;
@@ -207,9 +215,32 @@
 
   gap: var(--space-xl);
 }
-/* ==========================
+
+/* =========================================================
+   Projects
+========================================================= */
+
+.projects-section {
+  padding: var(--space-4xl) 0;
+}
+
+.projects-section .section-heading {
+  max-width: 750px;
+}
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: var(--space-xl);
+
+  align-items: stretch;
+}
+
+/* =========================================================
    Footer
-========================== */
+========================================================= */
 
 .site-footer {
   padding: var(--space-xl) 0;
@@ -219,9 +250,15 @@
   text-align: center;
 }
 
-/* ==========================
-   Responsive
-========================== */
+.site-footer p {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+}
+
+/* =========================================================
+   Responsive — Tablet & Mobile
+========================================================= */
 
 @media (max-width: 768px) {
   :root {
@@ -229,14 +266,32 @@
     --font-size-3xl: 1.75rem;
   }
 
+  /* -------------------------------------------------------
+     Navbar
+  ------------------------------------------------------- */
+
   .navbar-links {
     display: none;
   }
+
+  /* -------------------------------------------------------
+     Hero
+  ------------------------------------------------------- */
 
   .hero-section {
     min-height: auto;
 
     padding: var(--space-4xl) 0;
+  }
+
+  .hero-section h1 {
+    max-width: 100%;
+  }
+
+  .hero-description {
+    max-width: 100%;
+
+    font-size: var(--font-size-base);
   }
 
   .hero-actions {
@@ -245,7 +300,62 @@
     align-items: stretch;
   }
 
+  /* -------------------------------------------------------
+     General Sections
+  ------------------------------------------------------- */
+
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  /* -------------------------------------------------------
+     Skills
+  ------------------------------------------------------- */
+
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* -------------------------------------------------------
+     Projects
+  ------------------------------------------------------- */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Small Mobile
+========================================================= */
+
+@media (max-width: 480px) {
+  /* -------------------------------------------------------
+     Hero
+  ------------------------------------------------------- */
+
+  .hero-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .hero-actions {
+    gap: var(--space-sm);
+  }
+
+  /* -------------------------------------------------------
+     Sections
+  ------------------------------------------------------- */
+
+  .section-heading {
+    margin-bottom: var(--space-2xl);
+  }
+
+  /* -------------------------------------------------------
+     Skills & Projects
+  ------------------------------------------------------- */
+
+  .skills-grid,
+  .projects-grid {
+    gap: var(--space-lg);
   }
 }
