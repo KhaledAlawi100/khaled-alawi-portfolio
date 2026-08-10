@@ -728,3 +728,67 @@ This keeps the project cards compact while still allowing additional technical i
 
 ---
 
+# Sprint 5 — Dark Mode
+
+## Overview
+
+Sprint 5 focused on implementing a complete theme-switching system for the
+portfolio website.
+
+The goal was to move from a static visual design to a user-controlled theme
+system while keeping the implementation simple, reusable, and maintainable.
+
+The theme system supports:
+
+- Light theme
+- Dark theme
+- Theme toggle button
+- CSS variables
+- JavaScript state management
+- `localStorage`
+- Persisted theme preference
+- Theme persistence after page refresh
+
+---
+
+## Sprint Goal
+
+> Practice state management and browser storage by implementing a persistent
+> light/dark theme system.
+
+---
+
+## Features Implemented
+
+### 1. Theme Toggle
+
+Added a theme toggle button to the main navigation.
+
+The button allows the user to switch between:
+
+- Light mode
+- Dark mode
+
+The toggle uses an SVG icon instead of an emoji to keep the interface
+consistent with the rest of the portfolio.
+
+---
+
+### 2. Light Theme
+
+The default theme uses the existing light color system.
+
+The colors are controlled through CSS custom properties rather than being
+hardcoded throughout the stylesheet.
+
+Example:
+
+```css
+:root {
+  --color-background: #ffffff;
+  --color-background-alt: #f8fafc;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+}
+```
