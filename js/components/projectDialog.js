@@ -3,10 +3,8 @@ export function initProjectDialogs() {
 
   const dialogs = document.querySelectorAll(".project-dialog");
 
-  // ==========================
+  
   // Open dialogs
-  // ==========================
-
   detailButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const dialogId = button.dataset.dialogTarget;
@@ -21,10 +19,8 @@ export function initProjectDialogs() {
     });
   });
 
-  // ==========================
-  // Close dialogs
-  // ==========================
 
+  // Close dialogs
   dialogs.forEach((dialog) => {
     const closeButton = dialog.querySelector(".dialog-close");
 
@@ -38,10 +34,8 @@ export function initProjectDialogs() {
       dialog.close();
     });
 
-    // ==========================
+    
     // Close when clicking backdrop
-    // ==========================
-
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) {
         dialog.close();

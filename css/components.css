@@ -4,6 +4,7 @@
 
 .btn {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -38,6 +39,13 @@
   outline-offset: 3px;
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
 /* ==========================
    Primary Button
 ========================== */
@@ -55,6 +63,7 @@
 
   border-color: var(--color-primary-hover);
 }
+
 
 /* ==========================
    Secondary Button
@@ -74,6 +83,26 @@
   border-color: var(--color-border);
 }
 
+
+/* ==========================
+   Navbar Actions
+========================== */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: var(--space-sm);
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+
 /* ==========================
    Theme Toggle
 ========================== */
@@ -83,6 +112,8 @@
 
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 
   width: 2.5rem;
   height: 2.5rem;
@@ -108,12 +139,229 @@
 
 .theme-toggle:hover {
   transform: rotate(10deg);
+
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
 }
 
 .theme-toggle:focus-visible {
   outline: 2px solid var(--color-primary);
+
   outline-offset: 3px;
 }
+
+
+/* ==========================
+   Theme Icons
+========================== */
+
+.theme-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+/* ==========================
+   Light Theme
+========================== */
+
+.theme-icon-moon {
+  display: none;
+}
+
+.theme-icon-sun {
+  display: block;
+}
+
+
+/* ==========================
+   Dark Theme
+========================== */
+
+html[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  display: block;
+}
+
+
+/* =========================================================
+   Mobile Menu Toggle / Hamburger
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-background-alt);
+
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.menu-toggle:hover {
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* ==========================
+   Hamburger Lines
+========================== */
+
+.menu-toggle span {
+  display: block;
+
+  width: 18px;
+  height: 2px;
+
+  flex-shrink: 0;
+
+  background: currentColor;
+
+  border-radius: var(--radius-full);
+
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+
+/* ==========================
+   Hamburger → X
+========================== */
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==========================
+   Mobile Navigation
+========================== */
+
+.mobile-navigation {
+  display: none;
+
+  background: var(--color-background);
+
+  border-bottom: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/*
+   IMPORTANT:
+
+   The HTML currently contains:
+
+   hidden
+
+   Therefore JavaScript should remove the hidden
+   attribute when opening the menu.
+
+   CSS controls the visual layout once the element
+   is allowed to display.
+*/
+
+.mobile-navigation.is-open {
+  display: block;
+}
+
+.mobile-navigation-links {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: var(--space-md) 0;
+}
+
+.mobile-navigation a {
+  display: block;
+
+  padding: var(--space-md);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-medium);
+
+  text-decoration: none;
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.mobile-navigation a:hover {
+  background: var(--color-background-alt);
+
+  color: var(--color-primary);
+}
+
+.mobile-navigation a:focus-visible {
+  outline: 2px solid var(--color-primary);
+
+  outline-offset: 2px;
+}
+
 
 /* ==========================
    Social Links
@@ -167,6 +415,7 @@
   flex-shrink: 0;
 }
 
+
 /* ==========================
    Skill Category
 ========================== */
@@ -189,6 +438,7 @@
   font-size: var(--font-size-lg);
 }
 
+
 /* ==========================
    Technology List
 ========================== */
@@ -200,6 +450,7 @@
 
   gap: var(--space-sm);
 }
+
 
 /* ==========================
    Technology Card
@@ -238,6 +489,7 @@
   font-weight: var(--font-weight-medium);
 }
 
+
 /* ==========================
    Project Card
 ========================== */
@@ -271,19 +523,20 @@
   box-shadow: var(--shadow-md);
 }
 
+
 /* ==========================
    Project Image
 ========================== */
 
 .project-image {
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
   display: flex;
 
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
@@ -293,10 +546,10 @@
 }
 
 .project-image img {
+  display: block;
+
   width: 100%;
   height: 100%;
-
-  display: block;
 
   object-fit: cover;
 
@@ -306,6 +559,7 @@
 .project-card:hover .project-image img {
   transform: scale(1.03);
 }
+
 
 /* ==========================
    Project Image Placeholder
@@ -327,6 +581,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
+
 /* ==========================
    Project Content
 ========================== */
@@ -340,6 +595,7 @@
 
   padding: var(--space-xl);
 }
+
 
 /* ==========================
    Project Type
@@ -359,6 +615,7 @@
   letter-spacing: 0.06em;
 }
 
+
 /* ==========================
    Project Title
 ========================== */
@@ -368,6 +625,7 @@
 
   font-size: var(--font-size-xl);
 }
+
 
 /* ==========================
    Project Description
@@ -380,6 +638,7 @@
 
   line-height: 1.7;
 }
+
 
 /* ==========================
    Project Technologies
@@ -394,6 +653,7 @@
 
   margin-bottom: var(--space-xl);
 }
+
 
 /* ==========================
    Technology Badge
@@ -421,6 +681,7 @@
   white-space: nowrap;
 }
 
+
 /* ==========================
    Project Actions
 ========================== */
@@ -438,6 +699,7 @@
 .project-actions .btn {
   flex: 1;
 }
+
 
 /* ==========================
    Project Details Dialog
@@ -471,6 +733,7 @@
   background: rgb(0 0 0 / 0.6);
 }
 
+
 /* ==========================
    Dialog Content
 ========================== */
@@ -482,6 +745,7 @@
 
   max-height: 85vh;
 }
+
 
 /* ==========================
    Dialog Header
@@ -505,6 +769,7 @@
   margin: 0;
 }
 
+
 /* ==========================
    Dialog Close Button
 ========================== */
@@ -513,7 +778,6 @@
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   flex-shrink: 0;
@@ -557,6 +821,7 @@
   outline-offset: 3px;
 }
 
+
 /* ==========================
    Dialog Body
 ========================== */
@@ -583,6 +848,7 @@
   margin-top: var(--space-2xl);
 }
 
+
 /* ==========================
    Contribution List
 ========================== */
@@ -592,6 +858,7 @@
 
   gap: var(--space-md);
 }
+
 
 /* ==========================
    Contribution Item
@@ -621,6 +888,7 @@
   line-height: 1.6;
 }
 
+
 /* ==========================
    Dialog Technology Badges
 ========================== */
@@ -629,6 +897,459 @@
   margin-bottom: 0;
 }
 
+
+/* ==========================
+   Contact Links
+========================== */
+
+.contact-links {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: var(--space-lg);
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================
+   Contact Link
+========================== */
+
+.contact-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-md);
+
+  padding: var(--space-lg);
+
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  color: var(--color-text);
+
+  text-decoration: none;
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--color-primary);
+
+  box-shadow: var(--shadow-md);
+
+  color: var(--color-primary);
+}
+
+.contact-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* ==========================
+   Contact Icon
+========================== */
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+}
+
+
+/* ==========================
+   Contact Link Content
+========================== */
+
+.contact-link-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-xs);
+}
+
+
+/* ==========================
+   Contact Link Title
+========================== */
+
+.contact-link-title {
+  color: var(--color-text);
+
+  font-size: var(--font-size-base);
+
+  font-weight: var(--font-weight-semibold);
+
+  transition: color var(--transition-normal);
+}
+
+.contact-link:hover .contact-link-title {
+  color: var(--color-primary);
+}
+
+
+/* ==========================
+   Contact Link Description
+========================== */
+
+.contact-link-description {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+}
+
+
+/* ==========================
+   Contact Form
+========================== */
+
+.contact-form-wrapper {
+  max-width: 750px;
+
+  margin: var(--space-3xl) auto 0;
+
+  padding: var(--space-2xl);
+
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ==========================
+   Contact Form Heading
+========================== */
+
+.contact-form-heading {
+  margin-bottom: var(--space-xl);
+}
+
+.contact-form-heading h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form-heading p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.6;
+}
+
+
+/* ==========================
+   Form
+========================== */
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-lg);
+}
+
+
+/* ==========================
+   Form Group
+========================== */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+}
+
+
+/* ==========================
+   Labels
+========================== */
+
+.form-group label {
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* ==========================
+   Inputs & Textarea
+========================== */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: var(--space-md);
+
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  color: var(--color-text);
+
+  font: inherit;
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+
+/* ==========================
+   Textarea
+========================== */
+
+.form-group textarea {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+
+/* ==========================
+   Placeholder
+========================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-secondary);
+
+  opacity: 0.7;
+}
+
+
+/* ==========================
+   Input Focus
+========================== */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--color-primary) 15%,
+      transparent
+    );
+}
+
+
+/* ==========================
+   Invalid Input
+========================== */
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: var(--color-error);
+}
+
+
+/* ==========================
+   Invalid Input Focus
+========================== */
+
+.form-group input.input-error:focus,
+.form-group textarea.input-error:focus {
+  border-color: var(--color-error);
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--color-error) 15%,
+      transparent
+    );
+}
+
+
+/* ==========================
+   Error Message
+========================== */
+
+.form-error {
+  min-height: 1.2em;
+
+  margin: 0;
+
+  color: var(--color-error);
+
+  font-size: var(--font-size-sm);
+}
+
+
+/* ==========================
+   Form Actions
+========================== */
+
+.contact-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: var(--space-sm);
+}
+
+
+/* ==========================
+   Submit Button
+========================== */
+
+.contact-form-actions .btn {
+  min-width: 150px;
+}
+
+
+/* ==========================
+   Submit Button Disabled
+========================== */
+
+.contact-form-actions .btn:disabled {
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  opacity: 0.7;
+
+  cursor: wait;
+}
+
+
+/* ==========================
+   Loading State
+========================== */
+
+.submit-loading {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-sm);
+}
+
+.submit-loading[hidden] {
+  display: none;
+}
+
+.submit-text[hidden] {
+  display: none;
+}
+
+
+/* ==========================
+   Form Status
+========================== */
+
+.form-status {
+  min-height: 1.5em;
+
+  margin-top: var(--space-sm);
+
+  font-size: var(--font-size-sm);
+
+  line-height: 1.5;
+}
+
+
+/* ==========================
+   Form Status — Success
+========================== */
+
+.form-status.form-status-success {
+  color: var(--color-success);
+}
+
+
+/* ==========================
+   Form Status — Error
+========================== */
+
+.form-status.form-status-error {
+  color: var(--color-error);
+}
+
+
+/* ==========================
+   Responsive Contact Links
+========================== */
+
+@media (max-width: 768px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-xl);
+  }
+
+  .contact-form-actions {
+    justify-content: stretch;
+  }
+
+  .contact-form-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+  .contact-form-wrapper {
+    padding: var(--space-lg);
+
+    border-radius: var(--radius-md);
+  }
+
+  .contact-form {
+    gap: var(--space-md);
+  }
+
+  .contact-link {
+    padding: var(--space-md);
+  }
+}
+
+
 /* ==========================
    Reduced Motion
 ========================== */
@@ -636,11 +1357,17 @@
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .theme-toggle,
+  .menu-toggle,
+  .menu-toggle span,
   .social-links a,
   .technology-card,
   .project-card,
   .project-image img,
-  .dialog-close {
+  .dialog-close,
+  .contact-link,
+  .contact-form input,
+  .contact-form textarea,
+  .mobile-navigation a {
     transition: none;
   }
 
@@ -649,92 +1376,90 @@
   .social-links a:hover,
   .technology-card:hover,
   .project-card:hover,
-  .project-card:hover .project-image img {
+  .project-card:hover .project-image img,
+  .contact-link:hover {
     transform: none;
   }
 }
 
-/* ==========================
-   Theme Toggle
-========================== */
 
-.theme-toggle {
-  display: inline-flex;
+/* =========================================================
+   Mobile Navigation Behavior
+========================================================= */
 
-  align-items: center;
-  justify-content: center;
+/*
+   Desktop:
+   - Navbar links visible
+   - Theme toggle visible
+   - Hamburger hidden
 
-  width: 2.5rem;
-  height: 2.5rem;
+   Tablet:
+   - Navbar links visible
+   - Theme toggle visible
+   - Hamburger hidden
 
-  padding: 0;
+   Mobile:
+   - Navbar links hidden
+   - Theme toggle visible
+   - Hamburger visible
+   - Mobile navigation available
+*/
 
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
+@media (max-width: 600px) {
 
-  background: var(--color-background-alt);
-  color: var(--color-text);
+  /* Hide desktop navigation */
+  .navbar-links {
+    display: none;
+  }
 
-  cursor: pointer;
+  /* Keep actions visible */
+  .navbar-actions {
+    display: flex;
 
-  transition:
-    background-color var(--transition-normal),
-    color var(--transition-normal),
-    border-color var(--transition-normal),
-    transform var(--transition-normal);
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-sm);
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Keep theme toggle visible */
+  .theme-toggle {
+    display: inline-flex;
+  }
 }
 
-.theme-toggle:hover {
-  transform: rotate(10deg);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
-/* ==========================
-   Theme Icons
-========================== */
-
-.theme-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  transition:
-    opacity var(--transition-normal),
-    transform var(--transition-normal);
-}
 
 /* ==========================
-   Light Theme
+   Very Small Mobile
 ========================== */
 
-.theme-icon-moon {
-  display: none;
-}
+@media (max-width: 360px) {
 
-.theme-icon-sun {
-  display: block;
-}
+  .navbar-actions {
+    gap: var(--space-xs);
+  }
 
-/* ==========================
-   Dark Theme
-========================== */
+  .menu-toggle,
+  .theme-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
 
-html[data-theme="dark"] .theme-icon-sun {
-  display: none;
-}
+  .theme-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 
-html[data-theme="dark"] .theme-icon-moon {
-  display: block;
+  .menu-toggle span {
+    width: 16px;
+  }
 }

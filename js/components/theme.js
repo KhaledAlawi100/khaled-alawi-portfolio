@@ -10,7 +10,8 @@ export function initTheme() {
 
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
 
-  const initialTheme = savedTheme || "light";
+  // Dark mode is the default theme.
+  const initialTheme = savedTheme || "dark";
 
   applyTheme(initialTheme);
 

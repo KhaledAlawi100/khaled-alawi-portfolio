@@ -792,3 +792,41 @@ Example:
   --color-border: #e5e7eb;
 }
 ```
+
+## Sprint 6 — Contact Form ✅
+
+Implemented a complete contact form with real backend integration.
+
+### Features
+
+- Contact form UI
+- Semantic form structure
+- Client-side validation
+- Backend validation
+- Field-level error messages
+- Success state
+- Error state
+- Loading state
+- Accessible form labels
+- Accessible status messages
+- Form reset after successful submission
+- Real API communication using `fetch()`
+- Spring Boot email service integration
+- Real email delivery
+
+### Architecture
+
+```text
+Frontend
+   ↓
+Client-side Validation
+   ↓
+fetch()
+   ↓
+Spring Boot REST API
+   ↓
+Backend Validation
+   ↓
+Email Service
+   ↓
+Email
